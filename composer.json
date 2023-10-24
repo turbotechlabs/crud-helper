@@ -1,0 +1,36 @@
+{
+    "name": "turbotech/helper",
+    "description": "turbotech/helper",
+    "license": "MIT",
+    "homepage": "https://turbotech.gitbook.io/helper",
+    "type": "library",
+    "keywords": [
+        "turbotech-helper",
+        "turbotech"
+    ],
+    "authors": [
+        {
+            "name": "Leat Sophat",
+            "email": "info.sophat@gmail.com",
+            "role": "Developer",
+            "homepage": "https://leatsophat.me"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TURBOTECH\\Helper\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "illuminate/support": "^8.83",
+        "illuminate/routing": "^8.83"
+    }
+}
