@@ -4,6 +4,7 @@
     "license": "MIT",
     "homepage": "https://turbotech.gitbook.io/helper",
     "type": "library",
+    "version": "0.1.0",
     "keywords": [
         "turbotech-helper",
         "turbotech"
