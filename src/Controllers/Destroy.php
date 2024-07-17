@@ -11,16 +11,16 @@ use TURBOTECH\Helper\Controllers\Response;
 class Destroy extends Controller
 {
 
-    /** Request @var Request $request*/ 
+    /** Request @var Request $request*/
     protected $request;
 
-    /** Request @var Request $request*/ 
+    /** Request @var Request $request*/
     protected $routeApis;
 
     /**
      * Initalize Params
-     * */ 
-    public function __construct(Request $request, $routeApis = null) 
+     * */
+    public function __construct(Request $request, $routeApis = null)
     {
         $this->request      = $request;
         $this->routeApis    = $routeApis;
@@ -28,11 +28,11 @@ class Destroy extends Controller
 
 
     /**
-     * Destroy data to database 
-     * 
+     * Destroy data to database
+     *
      * @return mixed
-     * */ 
-    public function destroy($routeApis = null) : object 
+     * */
+    public function destroy($routeApis = null) : object
     {
         $data       = $this->request->all();
         $api        = $routeApis ?? $this->routeApis ?? $this->request->routeApis;

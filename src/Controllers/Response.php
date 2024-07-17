@@ -5,10 +5,10 @@ namespace TURBOTECH\Helper\Controllers;
 use TURBOTECH\Helper\Controllers\Helper;
 
 class Response
-{    
+{
     /**
      * Get HTTP Header Authorization Bearer token
-     * */ 
+     * */
     public static function getBearerHeaderAuthorization() : array
     {
         if (Helper::checkSession()) session_start();
@@ -21,17 +21,17 @@ class Response
         ];
         return $headers;
     }
-    
-    
+
+
     /**
      * Get Full Header Requiredment
-     * */ 
+     * */
     public static function getFullAuthorizationHeader() : array
     {
         if (Helper::checkSession()) session_start();
 
         $token  = $_SESSION['token'];
-        return $token 
+        return $token
             ? [
                 'Authorization' => "Bearer $token",
                 'Content-Type'  => 'application/json',
@@ -45,13 +45,13 @@ class Response
     }
 
 
-    /** 
+    /**
      * Response returning result
-     * 
+     *
      * @param object $response
      * @return object
-     * */ 
-    public static function result(object $response) : object 
+     * */
+    public static function result(object $response) : object
     {
         return isset($response->result)
             ? (object)$response

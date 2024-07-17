@@ -2,13 +2,13 @@
 
 namespace TURBOTECH\Helper\Controllers;
 
-class Helper 
+class Helper
 {
-    
+
     /**
      * Get check session.
      * */
-    public static function checkSession() 
+    public static function checkSession()
     {
         return session_status() == PHP_SESSION_NONE;
     }
@@ -16,7 +16,7 @@ class Helper
 
     /**
      * Get APP_URL from env.
-     * 
+     *
      * @return string
      * */
     public static function getAppURL() : string
@@ -27,7 +27,7 @@ class Helper
 
     /**
      * Get APP_NAME from env.
-     * 
+     *
      * @return string
      * */
     public static function getAppName() : string
@@ -35,10 +35,10 @@ class Helper
         return env('APP_NAME', 'TURBOTECH');
     }
 
-    
+
     /**
      * Get APP_ENV from env.
-     * 
+     *
      * @return string
      * */
     public static function getAppENV() : string
@@ -46,10 +46,10 @@ class Helper
         return env('APP_ENV', 'local');
     }
 
-        
+
     /**
      * Get APP_ENV from env.
-     * 
+     *
      * @return bool
      * */
     public static function getAppDEBUG() : bool
@@ -57,21 +57,21 @@ class Helper
         return env('APP_DEBUG', true);
     }
 
-        
+
     /**
      * Get APP_UPLOAD from env.
-     * 
+     *
      * @return string
      * */
     public static function getAppUploadApi() : string
     {
         return env('APP_UPLOAD', 'api/upload');
     }
-    
-    
+
+
     /**
      * Get APP_UPLOAD from env.
-     * 
+     *
      * @return string
      * */
     public static function mergeRoute($routing) : string
