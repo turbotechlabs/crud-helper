@@ -11,49 +11,49 @@ use TURBOTECH\Helper\Controllers\File;
 
 class Store extends Controller
 {
-    /** Request @var Request $request*/ 
+    /** Request @var Request $request*/
     protected $request;
 
-    /** Request @var Request $request*/ 
+    /** Request @var Request $request*/
     protected $routeApis;
 
     /**
      * Initalize Params
-     * */ 
-    public function __construct(Request $request, $routeApis) 
+     * */
+    public function __construct(Request $request, $routeApis)
     {
         $this->request      = $request;
         $this->routeApis    = $routeApis;
     }
-    
+
 
     /**
      * checking upload files
-     * 
-     * @var Request 
+     *
+     * @var Request
      * @return bool
-     * */ 
-    public function issetFiles() : bool 
+     * */
+    public function issetFiles() : bool
     {
         return $this->request->allFiles() ? true : false;
     }
 
 
     /**
-     * Save data to database 
-     * 
+     * Save data to database
+     *
      * @return mixed
-     * */ 
-    public function save($routeApis = null) : object 
+     * */
+    public function save($routeApis = null) : object
     {
         $data       = $this->request->all();
-        if ($this->issetFiles()) 
+        if ($this->issetFiles())
         {
-            foreach($this->request->allFiles() as $key => $value) 
+            foreach($this->request->allFiles() as $key => $value)
             {
                 $fileResult = File::uploadFiles($value);
                 $data[$key] = $fileResult->result;
-            }  
+            }
         }
         $api        = $routeApis ?? $this->routeApis ?? $this->request->routeApis;
         $route      = Help::mergeRoute($api);
